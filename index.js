@@ -39,7 +39,7 @@ app.post("/", (req, res) => {
     try {
       const database = client.db("mongodemo");
       const student = database.collection("student");
-      const result = await student.insertOne(req.params);
+      const result = await student.insertOne(req.body);
       console.log(result);
     } finally {
       // Ensures that the client will close when you finish/error
